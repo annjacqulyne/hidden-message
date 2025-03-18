@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Password Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid black;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            display: none;
+            font-size: 20px;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🔒 Enter the Secret Code</h2>
+    
+    <input type="password" id="passwordInput" placeholder="Enter code">
+    <button onclick="checkPassword()">Submit</button>
+
+    <p id="message">🎉 Correct! The secret message is: <b>“I may be small, but I am highly sought after. My place lies between the ICT room and the halls. Dare to find me!”</b></p>
+
+    <script>
+        function checkPassword() {
+            var inputField = document.getElementById("passwordInput");
+            var message = document.getElementById("message");
+            var password = inputField.value;
+
+            if (password === "5101440111") {  // Set your secret number
+                message.style.display = "block";
+                inputField.style.borderColor = "green";
+            } else {
+                alert("❌ Wrong password! Try again.");
+            }
+        }
+    </script>
+
+</body>
+</html>
